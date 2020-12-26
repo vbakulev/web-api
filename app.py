@@ -1,8 +1,5 @@
 from flask import *
-from pycaret.classification import *
-from pickle import *
-# import pandas as pd
-# import numpy as np
+import random
 
 app = Flask(__name__)
 
@@ -39,12 +36,7 @@ def predict():
         elif list_features[i] == 'No':
             list_features[i] = '0'
 
-#     final = np.array(list_features)
-#     data_unseen = pd.DataFrame([final], columns=cols)
-#     prediction = predict_model(model, data=data_unseen)
-
-#     prediction = prediction.Label[0]
-    prediction = 'Yes'
+    prediction = random.choice(['Yes', 'No'])
     if prediction == 'Yes':
         predict_text = 'Will not come!'
     elif prediction == 'No':
