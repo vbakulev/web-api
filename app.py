@@ -1,11 +1,11 @@
 from flask import *
-# from pycaret.classification import *
+from pycaret.classification import *
 # import pandas as pd
 # import numpy as np
 
 app = Flask(__name__)
 
-# model = load_model('model')
+model = load_model('model')
 cols = [
     'Gender',
     'Age',
