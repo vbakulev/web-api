@@ -17,10 +17,8 @@
 
      <!-- Form to enter new data for predictions  -->
     <form action="{{ url_for('predict')}}"method="POST">
-      <input type="text" name="gender" placeholder="Gender" required="required" /><br>
+      	<input type="text" name="gender" placeholder="Gender" required="required" /><br>
     	<input type="text" name="age" placeholder="Age" required="required" /><br>
-
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
    <br>
@@ -28,7 +26,6 @@
   
    
  </div>
- {{pred}}
 
 </body>
 </html>
