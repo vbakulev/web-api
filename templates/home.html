@@ -2,23 +2,145 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Predict Insurance Bill</title>
+  <title>Where is my Patient?</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='./style.css') }}">
-  
+
 </head>
 
 <body>
  <div class="login">
-	<h1>Predict Insurance Bill</h1>
+	<h1>Will my patient come to the appointment?</h1>
 
      <!-- Form to enter new data for predictions  -->
     <form action="{{ url_for('predict')}}"method="POST">
-      <input type="text" name="gender" placeholder="Gender" required="required" /><br>
-    	<input type="text" name="age" placeholder="Age" required="required" /><br>
+        <input list="<gender_list>" type="text" name="gender" placeholder="Gender" required="required" autocomplete="off"/>
+            <datalist id="<gender_list>">
+                <option value="Male"></option>
+                <option value="Female"></option>
+            </datalist>
+
+        <input type="text" name="age" placeholder="Age" required="required" autocomplete="off"/><br>
+
+        <input list="<neighbourhood_list>" type="text" name="neighbourhood" placeholder="Neighbourhood" required="required" autocomplete="off"/><br>
+            <datalist id="<neighbourhood_list>">
+                <option value="JARDIM DA PENHA"></option>
+                <option value="MATA DA PRAIA"></option>
+                <option value="PONTAL DE CAMBURI"></option>
+                <option value="REPÚBLICA"></option>
+                <option value="GOIABEIRAS"></option>
+                <option value="ANDORINHAS"></option>
+                <option value="CONQUISTA"></option>
+                <option value="NOVA PALESTINA"></option>
+                <option value="DA PENHA"></option>
+                <option value="TABUAZEIRO"></option>
+                <option value="BENTO FERREIRA"></option>
+                <option value="SÃO PEDRO"></option>
+                <option value="SANTA MARTHA"></option>
+                <option value="SÃO CRISTÓVÃO"></option>
+                <option value="MARUÍPE"></option>
+                <option value="GRANDE VITÓRIA"></option>
+                <option value="SÃO BENEDITO"></option>
+                <option value="ILHA DAS CAIEIRAS"></option>
+                <option value="SANTO ANDRÉ"></option>
+                <option value="SOLON BORGES"></option>
+                <option value="BONFIM"></option>
+                <option value="JARDIM CAMBURI"></option>
+                <option value="MARIA ORTIZ"></option>
+                <option value="JABOUR"></option>
+                <option value="ANTÔNIO HONÓRIO"></option>
+                <option value="RESISTÊNCIA"></option>
+                <option value="ILHA DE SANTA MARIA"></option>
+                <option value="JUCUTUQUARA"></option>
+                <option value="MONTE BELO"></option>
+                <option value="MÁRIO CYPRESTE"></option>
+                <option value="SANTO ANTÔNIO"></option>
+                <option value="BELA VISTA"></option>
+                <option value="PRAIA DO SUÁ"></option>
+                <option value="SANTA HELENA"></option>
+                <option value="ITARARÉ"></option>
+                <option value="INHANGUETÁ"></option>
+                <option value="UNIVERSITÁRIO"></option>
+                <option value="SÃO JOSÉ"></option>
+                <option value="REDENÇÃO"></option>
+                <option value="SANTA CLARA"></option>
+                <option value="CENTRO"></option>
+                <option value="PARQUE MOSCOSO"></option>
+                <option value="DO MOSCOSO"></option>
+                <option value="SANTOS DUMONT"></option>
+                <option value="CARATOÍRA"></option>
+                <option value="ARIOVALDO FAVALESSA"></option>
+                <option value="ILHA DO FRADE"></option>
+                <option value="GURIGICA"></option>
+                <option value="JOANA D´ARC"></option>
+                <option value="CONSOLAÇÃO"></option>
+                <option value="PRAIA DO CANTO"></option>
+                <option value="BOA VISTA"></option>
+                <option value="MORADA DE CAMBURI"></option>
+                <option value="SANTA LUÍZA"></option>
+                <option value="SANTA LÚCIA"></option>
+                <option value="BARRO VERMELHO"></option>
+                <option value="ESTRELINHA"></option>
+                <option value="FORTE SÃO JOÃO"></option>
+                <option value="FONTE GRANDE"></option>
+                <option value="ENSEADA DO SUÁ"></option>
+                <option value="SANTOS REIS"></option>
+                <option value="PIEDADE"></option>
+                <option value="JESUS DE NAZARETH"></option>
+                <option value="SANTA TEREZA"></option>
+                <option value="CRUZAMENTO"></option>
+                <option value="ILHA DO PRÍNCIPE"></option>
+                <option value="ROMÃO"></option>
+                <option value="COMDUSA"></option>
+                <option value="SANTA CECÍLIA"></option>
+                <option value="VILA RUBIM"></option>
+                <option value="DE LOURDES"></option>
+                <option value="DO QUADRO"></option>
+                <option value="DO CABRAL"></option>
+                <option value="HORTO"></option>
+                <option value="SEGURANÇA DO LAR"></option>
+                <option value="ILHA DO BOI"></option>
+                <option value="FRADINHOS"></option>
+                <option value="NAZARETH"></option>
+                <option value="AEROPORTO"></option>
+                <option value="ILHAS OCEÂNICAS DE TRINDADE"></option>
+                <option value="PARQUE INDUSTRIAL"></option>
+            </datalist>
+
+        <input list="<scholarship_list>" type="text" name="scholarship" placeholder="Scholarship" required="required" autocomplete="off"/><br>
+            <datalist id="<scholarship_list>">
+                <option value="Yes"></option>
+                <option value="No"></option>
+            </datalist>
+
+        <input list="<hypertension_list>" type="text" name="hypertension" placeholder="Hypertension" required="required" autocomplete="off"/><br>
+            <datalist id="<hypertension_list>">
+                <option value="Yes"></option>
+                <option value="No"></option>
+            </datalist>
+
+        <input list="<diabetes_list>" type="text" name="diabetes" placeholder="Diabetes" required="required" autocomplete="off"/><br>
+            <datalist id="<diabetes_list>">
+                <option value="Yes"></option>
+                <option value="No"></option>
+            </datalist>
+
+        <input list="<alcoholism_list>" type="text" name="alcoholism" placeholder="Alcoholism" required="required"  autocomplete="off"/><br>
+            <datalist id="<alcoholism_list>">
+                <option value="Yes"></option>
+                <option value="No"></option>
+            </datalist>
+
+        <input list="<handicap_list>" type="text" name="handicap" placeholder="Handicap" required="required" /><br>
+            <datalist id="<handicap_list>">
+                <option value="Yes"></option>
+                <option value="No"></option>
+            </datalist>
+
+
 
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
@@ -28,7 +150,8 @@
   
    
  </div>
- {{pred}}
+
+<h1>{{pred}}</h1>
 
 </body>
 </html>
