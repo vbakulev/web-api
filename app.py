@@ -1,5 +1,6 @@
 from flask import *
 from pycaret.classification import *
+from pickle import *
 # import pandas as pd
 # import numpy as np
 
