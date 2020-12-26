@@ -1,7 +1,4 @@
 from flask import Flask, request, url_for, redirect, render_template, jsonify
-import pandas as pd
-import pickle
-import numpy as np
 
 app = Flask(__name__)
 
@@ -17,8 +14,6 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     int_features = [x for x in request.form.values()]
-    final = np.array(int_features)
-    data_unseen = pd.DataFrame([final], columns=cols)
     prediction = '1'
     prediction = int(prediction)
     return render_template('home.html', pred='Expected Bill will be {}'.format(prediction))
